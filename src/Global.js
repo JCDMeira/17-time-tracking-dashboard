@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 :root{
@@ -25,4 +25,13 @@ html{
   font-family: Rubik;
   font-size: 62.5%;
 }
+`;
+
+export const Conteiner = styled.div`
+  width: 100vw;
+  height: 146.9rem;
+  background: var(--dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
