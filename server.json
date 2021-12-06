@@ -1,5 +1,5 @@
-[
-  {
+{
+  "work": {
     "title": "Work",
     "timeframes": {
       "daily": {
@@ -16,7 +16,7 @@
       }
     }
   },
-  {
+  "play": {
     "title": "Play",
     "timeframes": {
       "daily": {
@@ -33,7 +33,7 @@
       }
     }
   },
-  {
+  "study": {
     "title": "Study",
     "timeframes": {
       "daily": {
@@ -50,7 +50,7 @@
       }
     }
   },
-  {
+  "exercise": {
     "title": "Exercise",
     "timeframes": {
       "daily": {
@@ -67,7 +67,7 @@
       }
     }
   },
-  {
+  "social": {
     "title": "Social",
     "timeframes": {
       "daily": {
@@ -84,7 +84,7 @@
       }
     }
   },
-  {
+  "self-care": {
     "title": "Self Care",
     "timeframes": {
       "daily": {
@@ -101,4 +101,4 @@
       }
     }
   }
-]
+}
