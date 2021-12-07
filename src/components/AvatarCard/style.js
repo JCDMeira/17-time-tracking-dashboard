@@ -45,4 +45,19 @@ export const AvatarCardConteiner = styled.div`
       }
     }
   }
+
+  .activeTime {
+    width: 27.3rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0 0 3.4rem;
+  }
+`;
+
+export const MyParagraph = styled.p`
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+
+  color: ${(props) =>
+    props.period === true ? 'var(--white)' : 'var(--desaturated-blue)'};
 `;
