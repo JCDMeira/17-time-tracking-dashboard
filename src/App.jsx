@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
+import { ActivityCard } from './components/ActivityCard';
 import { AvatarCard } from './components/AvatarCard';
 import { Content } from './components/Content';
 import { Conteiner, GlobalStyle } from './Global';
@@ -23,6 +24,12 @@ function App() {
       <Conteiner>
         <Content>
           <AvatarCard />
+          <ActivityCard />
+          <ActivityCard />
+          <ActivityCard />
+          <ActivityCard />
+          <ActivityCard />
+          <ActivityCard />
         </Content>
       </Conteiner>
     </>
