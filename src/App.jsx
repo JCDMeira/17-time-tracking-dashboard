@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
+import { AvatarCard } from './components/AvatarCard';
 import { Content } from './components/Content';
 import { Conteiner, GlobalStyle } from './Global';
 
@@ -21,7 +22,7 @@ function App() {
       <GlobalStyle />
       <Conteiner>
         <Content>
-          <h1>hello</h1>
+          <AvatarCard />
         </Content>
       </Conteiner>
     </>
