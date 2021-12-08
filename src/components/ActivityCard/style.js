@@ -75,10 +75,10 @@ export const ActivityCardConteiner = styled.div`
   @media (min-width: 1200px) {
     width: auto;
     height: auto;
-    grid-area: ${`card${(props) => props.tagCard}`};
+    grid-area: ${(props) => props.tagCard};
 
     .info {
-      width: 25.6rem;
+      width: 256px;
       height: 20rem;
       flex-direction: column;
       padding: 3.2rem 2.4rem 0 2.9rem;

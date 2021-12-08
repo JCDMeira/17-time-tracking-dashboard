@@ -8,7 +8,7 @@ import workIcon from '../../assets/images/icon-work.svg';
 
 function ActivityCard({ tagCard }) {
   return (
-    <ActivityCardConteiner tagCard={tagCard}>
+    <ActivityCardConteiner tagCard={() => `card${tagCard}`}>
       <img className="activityIcon" src={workIcon} alt="activity icon" />
       <div className="info">
         <img src={optionsIcon} alt="more options" />

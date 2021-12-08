@@ -8,8 +8,8 @@ export const GlobalStyle = createGlobalStyle`
   --light-red: #FF5C7C;
   --lime-green: #4ACF81;
   --violet: #7536D3;
-  --soft-orange: F1C65B
-  --very-dark-blue: #0F1424;
+  --soft-orange: #F1C65B;
+  --very-dark: #0F1424;
   --dark-blue: #1C1F4A;
   --desaturated-blue: #6F76C8;
   --pale-blue:  #BDC1FF;
@@ -31,7 +31,7 @@ html{
 export const Conteiner = styled.div`
   width: 100vw;
   height: 146.9rem;
-  background: var(--dark-blue);
+  background: #0f1424;
   display: flex;
   align-items: center;
   justify-content: center;
