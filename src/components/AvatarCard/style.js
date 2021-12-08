@@ -94,9 +94,9 @@ export const AvatarCardConteiner = styled.div`
       }
     }
     .activeTime {
-      width: 27.3rem;
-      flex-direction: column;
+      width: 20rem;
       height: 10.4rem;
+      flex-direction: column;
       justify-content: space-between;
       margin: 2.7rem 0 0 3.2rem;
     }

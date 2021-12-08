@@ -76,5 +76,36 @@ export const ActivityCardConteiner = styled.div`
     width: auto;
     height: auto;
     grid-area: ${`card${(props) => props.tagCard}`};
+
+    .info {
+      width: 25.6rem;
+      height: 20rem;
+      flex-direction: column;
+      padding: 3.2rem 2.4rem 0 2.9rem;
+      img {
+        right: 2.9rem;
+        top: 3.7rem;
+      }
+
+      .current {
+        h1 {
+          span {
+            margin-top: 2.3rem;
+
+            font-weight: 300;
+            font-size: 5.6rem;
+            line-height: 6.6rem;
+          }
+        }
+      }
+
+      .last {
+        align-items: flex-start;
+        padding-bottom: 0.5rem;
+        h2 {
+          margin-top: 1.1rem;
+        }
+      }
+    }
   }
 `;
