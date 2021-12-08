@@ -18,18 +18,23 @@ function App() {
   //   });
   // }, []);
 
+  const test = [0, 1, 2, 3, 4, 5];
+
   return (
     <>
       <GlobalStyle />
       <Conteiner>
         <Content>
           <AvatarCard />
-          <ActivityCard />
-          <ActivityCard />
-          <ActivityCard />
-          <ActivityCard />
-          <ActivityCard />
-          <ActivityCard />
+          {test.map((values, index) => {
+            return <ActivityCard key={index} tagCard={index} />;
+          })}
+          {/* <ActivityCard tagCard={'card0'} />
+          <ActivityCard tagCard={'card1'} />
+          <ActivityCard tagCard={'card2'} />
+          <ActivityCard tagCard={'card3'} />
+          <ActivityCard tagCard={'card4'} />
+          <ActivityCard tagCard={'card5'} /> */}
         </Content>
       </Conteiner>
     </>

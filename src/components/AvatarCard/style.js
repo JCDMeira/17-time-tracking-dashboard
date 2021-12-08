@@ -52,6 +52,11 @@ export const AvatarCardConteiner = styled.div`
     justify-content: space-between;
     margin: 2.5rem 0 0 3.4rem;
   }
+  @media (min-width: 1200px) {
+    width: auto;
+    height: auto;
+    grid-area: avatarCard;
+  }
 `;
 
 export const MyParagraph = styled.p`

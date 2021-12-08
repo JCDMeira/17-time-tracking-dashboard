@@ -71,4 +71,10 @@ export const ActivityCardConteiner = styled.div`
       }
     }
   }
+
+  @media (min-width: 1200px) {
+    width: auto;
+    height: auto;
+    grid-area: ${`card${(props) => props.tagCard}`};
+  }
 `;

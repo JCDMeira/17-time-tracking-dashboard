@@ -35,4 +35,8 @@ export const Conteiner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 1200px) {
+    height: 100vh;
+  }
 `;

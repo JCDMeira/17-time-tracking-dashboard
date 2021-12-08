@@ -1,13 +1,14 @@
 import React from 'react';
+import P from 'prop-types';
 
 import { ActivityCardConteiner } from './style';
 
 import optionsIcon from '../../assets/images/icon-ellipsis.svg';
 import workIcon from '../../assets/images/icon-work.svg';
 
-function ActivityCard() {
+function ActivityCard({ tagCard }) {
   return (
-    <ActivityCardConteiner>
+    <ActivityCardConteiner tagCard={tagCard}>
       <img className="activityIcon" src={workIcon} alt="activity icon" />
       <div className="info">
         <img src={optionsIcon} alt="more options" />
@@ -23,5 +24,9 @@ function ActivityCard() {
     </ActivityCardConteiner>
   );
 }
+
+ActivityCard.propTypes = {
+  tagCard: P.number.isRequired,
+};
 
 export { ActivityCard };
