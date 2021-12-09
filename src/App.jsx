@@ -10,10 +10,8 @@ import { Conteiner, GlobalStyle } from './Global';
 import { ActivitysConsumer } from './Contexts/ActivitysContext';
 
 function App() {
-  const test = [0, 1, 2, 3, 4, 5];
+  // const test = [0, 1, 2, 3, 4, 5];
   const { name, activitys } = ActivitysConsumer();
-
-  console.log(activitys);
 
   return (
     <>
@@ -22,7 +20,9 @@ function App() {
         <Content>
           <AvatarCard name={name} />
           {activitys?.map((values, index) => {
-            return <ActivityCard key={index} tagCard={index} />;
+            return (
+              <ActivityCard key={index} tagCard={index} title={values.title} />
+            );
           })}
         </Content>
       </Conteiner>

@@ -10,6 +10,26 @@ const ActivitysProvider = ({ children }) => {
   const [activitys, setActivitys] = useState([]);
   const [period, setPeriod] = useState([]);
 
+  function findInfoPeriod(obj) {
+    Object.keys(obj).forEach((key) => {
+      // console.log(key); //, obj[key]
+
+      if (key === 'daily') {
+        console.log(obj[key]);
+        // objFinal.push(obj[key]);
+        return obj[key];
+      }
+      if (obj[key]) {
+        if (typeof obj[key] == 'object' || Array.isArray(obj[key])) {
+          findInfoPeriod(obj[key]);
+        }
+      }
+    });
+  }
+  findInfoPeriod(activitys);
+
+  useEffect(() => {}, []);
+
   useEffect(() => {
     api.get('/profiles').then((response) => {
       // console.log(response);
@@ -19,7 +39,7 @@ const ActivitysProvider = ({ children }) => {
     });
   }, []);
 
-  // console.log('context', activitys);
+  // console.log('context', 'period:', period, 'ac:', activitys);
 
   return (
     <ActivitysContexts.Provider

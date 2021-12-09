@@ -11,7 +11,7 @@ import exerciseIcon from '../../assets/images/icon-exercise.svg';
 import socialIcon from '../../assets/images/icon-social.svg';
 import selfCareIcon from '../../assets/images/icon-self-care.svg';
 
-function ActivityCard({ tagCard }) {
+function ActivityCard({ tagCard, title }) {
   const icons = [
     workIcon,
     playIcon,
@@ -38,7 +38,8 @@ function ActivityCard({ tagCard }) {
         <img src={optionsIcon} alt="more options" />
         <div className="current">
           <h1>
-            Work<span>32hrs</span>
+            {title}
+            <span>32hrs</span>
           </h1>
         </div>
         <div className="last">
@@ -51,6 +52,7 @@ function ActivityCard({ tagCard }) {
 
 ActivityCard.propTypes = {
   tagCard: P.number.isRequired,
+  title: P.string.isRequired,
 };
 
 export { ActivityCard };
