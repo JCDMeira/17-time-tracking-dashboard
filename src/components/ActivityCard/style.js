@@ -4,7 +4,7 @@ export const ActivityCardConteiner = styled.div`
   width: 87.2vw; //327
   height: 16rem;
   border-radius: 1.5rem;
-  background: var(--orange);
+  background: var(${(props) => props.myBackgroundColor});
   position: relative;
   overflow: hidden;
 

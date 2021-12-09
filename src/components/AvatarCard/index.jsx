@@ -1,10 +1,11 @@
 import React from 'react';
+import P from 'prop-types';
 
 import { AvatarCardConteiner, MyParagraph } from './style';
 
 import photo from '../../assets/images/image-jeremy.png';
 
-function AvatarCard() {
+function AvatarCard({ name }) {
   const period = 'Weekly';
   return (
     <AvatarCardConteiner>
@@ -13,7 +14,7 @@ function AvatarCard() {
           <img src={photo} alt="avatar photo" />
         </div>
         <h1>
-          Report for<span>Jeremy Robson</span>
+          Report for<span>{name}</span>
         </h1>
       </div>
       <div className="activeTime">
@@ -24,5 +25,9 @@ function AvatarCard() {
     </AvatarCardConteiner>
   );
 }
+
+AvatarCard.propTypes = {
+  name: P.string.isRequired,
+};
 
 export { AvatarCard };

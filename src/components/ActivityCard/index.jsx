@@ -5,11 +5,35 @@ import { ActivityCardConteiner } from './style';
 
 import optionsIcon from '../../assets/images/icon-ellipsis.svg';
 import workIcon from '../../assets/images/icon-work.svg';
+import playIcon from '../../assets/images/icon-play.svg';
+import studyIcon from '../../assets/images/icon-study.svg';
+import exerciseIcon from '../../assets/images/icon-exercise.svg';
+import socialIcon from '../../assets/images/icon-social.svg';
+import selfCareIcon from '../../assets/images/icon-self-care.svg';
 
 function ActivityCard({ tagCard }) {
+  const icons = [
+    workIcon,
+    playIcon,
+    studyIcon,
+    exerciseIcon,
+    socialIcon,
+    selfCareIcon,
+  ];
+  const myBackgroundColor = [
+    '--orange',
+    '--soft-blue',
+    '--light-red',
+    '--lime-green',
+    '--violet',
+    '--soft-orange',
+  ];
   return (
-    <ActivityCardConteiner tagCard={() => `card${tagCard}`}>
-      <img className="activityIcon" src={workIcon} alt="activity icon" />
+    <ActivityCardConteiner
+      tagCard={() => `card${tagCard}`}
+      myBackgroundColor={myBackgroundColor[tagCard]}
+    >
+      <img className="activityIcon" src={icons[tagCard]} alt="activity icon" />
       <div className="info">
         <img src={optionsIcon} alt="more options" />
         <div className="current">

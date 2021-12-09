@@ -109,4 +109,6 @@ export const MyParagraph = styled.p`
 
   color: ${(props) =>
     props.period === true ? 'var(--white)' : 'var(--desaturated-blue)'};
+
+  cursor: pointer;
 `;
