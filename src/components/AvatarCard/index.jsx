@@ -8,7 +8,6 @@ import { ActivitysConsumer } from '../../Contexts/ActivitysContext';
 
 function AvatarCard({ name }) {
   const { searchPeriod, setSearchPeriod } = ActivitysConsumer();
-  console.log(searchPeriod);
   return (
     <AvatarCardConteiner>
       <div className="infoCard">

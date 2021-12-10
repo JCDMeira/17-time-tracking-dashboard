@@ -11,7 +11,6 @@ import exerciseIcon from '../../assets/images/icon-exercise.svg';
 import socialIcon from '../../assets/images/icon-social.svg';
 import selfCareIcon from '../../assets/images/icon-self-care.svg';
 
-// eslint-disable-next-line no-unused-vars
 function ActivityCard({ tagCard, title, period }) {
   const icons = [
     workIcon,
