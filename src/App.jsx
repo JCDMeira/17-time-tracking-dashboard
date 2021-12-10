@@ -10,7 +10,7 @@ import { Conteiner, GlobalStyle } from './Global';
 import { ActivitysConsumer } from './Contexts/ActivitysContext';
 
 function App() {
-  const { name, activitys } = ActivitysConsumer();
+  const { name, activitys, period } = ActivitysConsumer();
 
   return (
     <>
@@ -19,7 +19,12 @@ function App() {
         <Content>
           <AvatarCard name={name} />
           {activitys?.map(({ title }, index) => (
-            <ActivityCard key={index} tagCard={index} title={title} />
+            <ActivityCard
+              key={index}
+              tagCard={index}
+              title={title}
+              period={period[index] || {}}
+            />
           ))}
         </Content>
       </Conteiner>

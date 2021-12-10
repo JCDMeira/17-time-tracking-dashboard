@@ -11,7 +11,8 @@ import exerciseIcon from '../../assets/images/icon-exercise.svg';
 import socialIcon from '../../assets/images/icon-social.svg';
 import selfCareIcon from '../../assets/images/icon-self-care.svg';
 
-function ActivityCard({ tagCard, title }) {
+// eslint-disable-next-line no-unused-vars
+function ActivityCard({ tagCard, title, period }) {
   const icons = [
     workIcon,
     playIcon,
@@ -39,11 +40,11 @@ function ActivityCard({ tagCard, title }) {
         <div className="current">
           <h1>
             {title}
-            <span>32hrs</span>
+            <span>{period.current}hrs</span>
           </h1>
         </div>
         <div className="last">
-          <h2>Last Week - 36hrs</h2>
+          <h2>Last Week - {period.previous}hrs</h2>
         </div>
       </div>
     </ActivityCardConteiner>
@@ -53,6 +54,7 @@ function ActivityCard({ tagCard, title }) {
 ActivityCard.propTypes = {
   tagCard: P.number.isRequired,
   title: P.string.isRequired,
+  period: P.object.isRequired,
 };
 
 export { ActivityCard };

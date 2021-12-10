@@ -63,7 +63,7 @@ const ActivitysProvider = ({ children }) => {
 
 const ActivitysConsumer = () => useContext(ActivitysProvider);
 
-export { ActivitysContexts, ActivitysProvider, ActivitysConsumer };
+// export { ActivitysContexts, ActivitysProvider, ActivitysConsumer };
 
 ActivitysProvider.propTypes = {
   children: P.object.isRequired,
