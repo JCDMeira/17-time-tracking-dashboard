@@ -9,26 +9,31 @@ const ActivitysProvider = ({ children }) => {
   const [name, setName] = useState('');
   const [activitys, setActivitys] = useState([]);
   const [period, setPeriod] = useState([]);
+  const word = 'weekly';
 
-  function findInfoPeriod(obj) {
-    Object.keys(obj).forEach((key) => {
-      // console.log(key); //, obj[key]
+  useEffect(() => {
+    function findInfoPeriod(obj, word, store = []) {
+      const myStore = store;
+      return Object.keys(obj).map((key) => {
+        // console.log(key); //, obj[key]
 
-      if (key === 'daily') {
-        console.log(obj[key]);
-        // objFinal.push(obj[key]);
-        return obj[key];
-      }
-      if (obj[key]) {
-        if (typeof obj[key] == 'object' || Array.isArray(obj[key])) {
-          findInfoPeriod(obj[key]);
+        if (key === word) {
+          myStore.push(obj[key]);
+          // console.log(obj[key], myStore);
         }
-      }
-    });
-  }
-  findInfoPeriod(activitys);
+        if (obj[key]) {
+          if (typeof obj[key] == 'object' || Array.isArray(obj[key])) {
+            findInfoPeriod(obj[key], word, myStore);
+          }
+        }
+        return myStore[myStore.length - 1];
+      });
+    }
 
-  useEffect(() => {}, []);
+    const recursiveResult = findInfoPeriod(activitys, word);
+    console.log(recursiveResult);
+    setPeriod(recursiveResult);
+  }, [activitys]);
 
   useEffect(() => {
     api.get('/profiles').then((response) => {
