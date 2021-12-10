@@ -9,32 +9,31 @@ const ActivitysProvider = ({ children }) => {
   const [name, setName] = useState('');
   const [activitys, setActivitys] = useState([]);
   const [period, setPeriod] = useState([]);
-  const [word, setWord] = useState('weekly');
-  // const word = 'weekly';
+  const [searchPeriod, setSearchPeriod] = useState('weekly');
 
   useEffect(() => {
-    function findInfoPeriod(obj, word, store = []) {
+    function findInfoPeriod(obj, searchPeriod, store = []) {
       const myStore = store;
       return Object.keys(obj).map((key) => {
         // console.log(key); //, obj[key]
 
-        if (key === word) {
+        if (key === searchPeriod) {
           myStore.push(obj[key]);
           // console.log(obj[key], myStore);
         }
         if (obj[key]) {
           if (typeof obj[key] == 'object' || Array.isArray(obj[key])) {
-            findInfoPeriod(obj[key], word, myStore);
+            findInfoPeriod(obj[key], searchPeriod, myStore);
           }
         }
         return myStore[myStore.length - 1];
       });
     }
 
-    const recursiveResult = findInfoPeriod(activitys, word);
+    const recursiveResult = findInfoPeriod(activitys, searchPeriod);
     // console.log(recursiveResult);
     setPeriod(recursiveResult);
-  }, [activitys, word]);
+  }, [activitys, searchPeriod]);
 
   useEffect(() => {
     api.get('/profiles').then((response) => {
@@ -49,7 +48,16 @@ const ActivitysProvider = ({ children }) => {
 
   return (
     <ActivitysContexts.Provider
-      value={{ name, setName, activitys, setActivitys, period, setPeriod }}
+      value={{
+        name,
+        setName,
+        activitys,
+        setActivitys,
+        period,
+        setPeriod,
+        searchPeriod,
+        setSearchPeriod,
+      }}
     >
       {children}
     </ActivitysContexts.Provider>

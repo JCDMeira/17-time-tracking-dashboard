@@ -4,9 +4,11 @@ import P from 'prop-types';
 import { AvatarCardConteiner, MyParagraph } from './style';
 
 import photo from '../../assets/images/image-jeremy.png';
+import { ActivitysConsumer } from '../../Contexts/ActivitysContext';
 
 function AvatarCard({ name }) {
-  const period = 'Weekly';
+  const { searchPeriod, setSearchPeriod } = ActivitysConsumer();
+  console.log(searchPeriod);
   return (
     <AvatarCardConteiner>
       <div className="infoCard">
@@ -18,9 +20,24 @@ function AvatarCard({ name }) {
         </h1>
       </div>
       <div className="activeTime">
-        <MyParagraph period={period === 'Daily'}>Daily</MyParagraph>
-        <MyParagraph period={period === 'Weekly'}>Weekly</MyParagraph>
-        <MyParagraph period={period === 'Monthly'}>Monthly</MyParagraph>
+        <MyParagraph
+          period={searchPeriod === 'daily'}
+          onClick={() => setSearchPeriod('daily')}
+        >
+          Daily
+        </MyParagraph>
+        <MyParagraph
+          period={searchPeriod === 'weekly'}
+          onClick={() => setSearchPeriod('weekly')}
+        >
+          Weekly
+        </MyParagraph>
+        <MyParagraph
+          period={searchPeriod === 'monthly'}
+          onClick={() => setSearchPeriod('monthly')}
+        >
+          Monthly
+        </MyParagraph>
       </div>
     </AvatarCardConteiner>
   );
