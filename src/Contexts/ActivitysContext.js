@@ -6,7 +6,7 @@ import { api } from '../services/api';
 const ActivitysContexts = createContext();
 
 const ActivitysProvider = ({ children }) => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState(null);
   const [activitys, setActivitys] = useState([]);
   const [period, setPeriod] = useState([]);
   const [searchPeriod, setSearchPeriod] = useState('weekly');

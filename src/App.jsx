@@ -17,15 +17,21 @@ function App() {
       <GlobalStyle />
       <Conteiner>
         <Content>
-          <AvatarCard name={name} />
-          {activitys?.map(({ title }, index) => (
-            <ActivityCard
-              key={index}
-              tagCard={index}
-              title={title}
-              period={period[index] || {}}
-            />
-          ))}
+          {name === null ? (
+            <div className="c-loader"></div>
+          ) : (
+            <>
+              <AvatarCard name={name || ''} />
+              {activitys?.map(({ title }, index) => (
+                <ActivityCard
+                  key={index}
+                  tagCard={index}
+                  title={title}
+                  period={period[index] || {}}
+                />
+              ))}
+            </>
+          )}
         </Content>
       </Conteiner>
     </>
