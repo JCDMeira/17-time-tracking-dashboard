@@ -41,15 +41,15 @@ Users should be able to:
 
 <p  align="center"><img width="720px" src="./presentation/desktop.png" align="center"></img></p>
 
-<!--### result of my work
+### result of my work
 
-<p  align="center"><img width="1080px" src="./presentation/design-x-myWork.gif" align="center"></img></p> -->
+<p  align="center"><img width="1080px" src="./presentation/design-x-myWork.gif" align="center"></img></p>
+<p  align="center"><img width="1080px" src="./presentation/work1.gif" align="center"></img></p>
 
 ### Links
 
-<!--
-- Solution URL: [My solution for this challenge](https://www.frontendmentor.io/solutions/single-price-grid-with-reactjs-YR5dhXAtZ)
-- Live Site URL: [check the result](https://jcdmeira-single-price.netlify.app)-->
+- Solution URL: [My solution for this challenge](https://www.frontendmentor.io/solutions/time-tracking-with-reactjs-styledcomponents-axios-and-json-server-owqITEvvD)
+- Live Site URL: [check the result](https://jcdmeira-time-tracking-dashboard.netlify.app)
 
 - My figma design: [Figma](https://www.figma.com/file/CsbY47xzwm6T3uiqYTPCQN/17-time-tracking-dashboard?node-id=3%3A8)
 
