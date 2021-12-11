@@ -1,6 +1,6 @@
 const URL_BACKEND = window.location.hostname.includes('localhost')
   ? 'http://localhost:3333'
-  : 'http://';
+  : 'https://time-tracking-dashboard-back.herokuapp.com';
 
 export default {
   URL_BACKEND,
