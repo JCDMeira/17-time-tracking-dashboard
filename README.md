@@ -71,9 +71,13 @@ O arquivo de context sustenta os estados globais da aplicação, como os dados q
 O useEffect com array vazio faz o papel de atualizar uma vez após a renderização da página, pegando os dados da fake API.
 E então os cards são renderizados com os dados adequados.
 
-| The context file holds the application's global states, such as the data it serves to populate the cards.
-| The useEffect with empty array plays the role of updating once after rendering the page, taking the data from the fake API.
-| And then cards are rendered with the proper dice.
+</br>
+<div align='right'>
+The context file holds the application's global states, such as the data it serves to populate the cards.
+The useEffect with empty array plays the role of updating once after rendering the page, taking the data from the fake API.
+And then cards are rendered with the proper dice.
+</div>
+</br>
 
 ```JS
  import React, { createContext, useContext, useEffect, useState } from 'react';
@@ -154,19 +158,24 @@ O objeto é recebido por uma constante, e se a chave for válida será adicionad
 e for chamado a recursividade o myStore será passado como parâmetro para a função, mantendo a integridade de seu valor.
 Ao final essa busca é retornada, contendo as horas do estado atual e anterior, que será salvo em um estado global para ser usado.
 
-| The second useEffect updates as dependencies change, and is associated with the search function below.
-| This function is a Backtracking algorithm, which performs a recursive search. It is being used to apply, even if in the case
-| in question would not be necessary, as it is known exactly the format and dimension of the JSON that arrives by the request, and this
-| one does not
-| changes.
-| The function receives the obj that will be searched, the word that will be searched inside the braces and a store parameter, which
-| serves to
-| guide the search by saving the valid results. This takes the formal value of an empty array, so if there is no value
-| real passed in the function call it will adopt empty array as value.
-| The object is received by a constant, and if the key is valid, the value will be added to the array, and whenever there is a new level
-| and recursion is called, myStore will be passed as a parameter to the function, keeping the integrity of its value.
-| At the end this search is returned, containing the hours of the current and previous state, which will be saved in a global state to
-| be used.
+</br>
+</br>
+<div align='right'>
+The second useEffect updates as dependencies change, and is associated with the search function below.
+This function is a Backtracking algorithm, which performs a recursive search. It is being used to apply, even if in the case
+in question would not be necessary, as it is known exactly the format and dimension of the JSON that arrives by the request, and this
+one does not
+changes.
+The function receives the obj that will be searched, the word that will be searched inside the braces and a store parameter, which
+serves to
+guide the search by saving the valid results. This takes the formal value of an empty array, so if there is no value
+real passed in the function call it will adopt empty array as value.
+The object is received by a constant, and if the key is valid, the value will be added to the array, and whenever there is a new level
+and recursion is called, myStore will be passed as a parameter to the function, keeping the integrity of its value.
+At the end this search is returned, containing the hours of the current and previous state, which will be saved in a global state to
+be used.
+</div>
+</br>
 
 ```JS
  function findInfoPeriod(obj, searchPeriod, store = []) {
@@ -191,11 +200,15 @@ o name e period contém um short circuit para evitar erros, caso o nome seja nul
 O map em activitys retorna os card de atividade, sendo que o título é atribuido via desestruturação do JSON e o period é pego acessando
 o estado global já criado, que segue a mesma ordem dos cards a serem renderizados.
 
-| If the name is null it means that the request has not returned yet, then a "loading spinner" will appear on the screen, if not
-| cards are rendered.
-| the name and period contain a short circuit to avoid errors, if the name is null or some other value considered false, for both cases.
-| The map in activitys returns the activity cards, the title is assigned via JSON destructuring and the period is taken by accessing
-| the global state already created, which follows the same order as the cards to be rendered.
+</br>
+<div align='right'>
+  If the name is null it means that the request has not returned yet, then a "loading spinner" will appear on the screen, if not
+  cards are rendered.
+  the name and period contain a short circuit to avoid errors, if the name is null or some other value considered false, for both cases.
+  The map in activitys returns the activity cards, the title is assigned via JSON destructuring and the period is taken by accessing
+  the global state already created, which follows the same order as the cards to be rendered.
+</div>
+</br>
 
 ```JSX
 import React from 'react';
@@ -209,32 +222,33 @@ import { Conteiner, GlobalStyle } from './Global';
 import { ActivitysConsumer } from './Contexts/ActivitysContext';
 
 function App() {
-  const { name, activitys, period } = ActivitysConsumer();
+const { name, activitys, period } = ActivitysConsumer();
 
-  return (
-    <>
-      <GlobalStyle />
-      <Conteiner>
-        <Content>
-          {name === null ? (
-            <div className="c-loader"></div>
-          ) : (
-            <>
-              <AvatarCard name={name || ''} />
-              {activitys?.map(({ title }, index) => (
-                <ActivityCard
-                  key={index}
-                  tagCard={index}
-                  title={title}
-                  period={period[index] || {}}
-                />
-              ))}
-            </>
-          )}
-        </Content>
-      </Conteiner>
-    </>
-  );
+return (
+<>
+<GlobalStyle />
+<Conteiner>
+<Content>
+{name === null ? (
+
+<div className="c-loader"></div>
+) : (
+<>
+<AvatarCard name={name || ''} />
+{activitys?.map(({ title }, index) => (
+<ActivityCard
+key={index}
+tagCard={index}
+title={title}
+period={period[index] || {}}
+/>
+))}
+</>
+)}
+</Content>
+</Conteiner>
+</>
+);
 }
 
 export default App;
@@ -254,3 +268,7 @@ export default App;
 - Frontend Mentor - [@JCDMeira](https://www.frontendmentor.io/profile/JCDMeira)
 - Instagram - [@jean.meira10](https://www.instagram.com/jean.meira10/)
 - GitHub - [JCDMeira](https://github.com/JCDMeira)
+
+```
+
+```
