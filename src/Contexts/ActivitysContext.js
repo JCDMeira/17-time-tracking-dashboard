@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import P from 'prop-types';
 import { api } from '../services/api';
@@ -15,11 +14,8 @@ const ActivitysProvider = ({ children }) => {
     function findInfoPeriod(obj, searchPeriod, store = []) {
       const myStore = store;
       return Object.keys(obj).map((key) => {
-        // console.log(key); //, obj[key]
-
         if (key === searchPeriod) {
           myStore.push(obj[key]);
-          // console.log(obj[key], myStore);
         }
         if (obj[key]) {
           if (typeof obj[key] == 'object' || Array.isArray(obj[key])) {
@@ -31,20 +27,15 @@ const ActivitysProvider = ({ children }) => {
     }
 
     const recursiveResult = findInfoPeriod(activitys, searchPeriod);
-    // console.log(recursiveResult);
     setPeriod(recursiveResult);
   }, [activitys, searchPeriod]);
 
   useEffect(() => {
     api.get('/profiles').then((response) => {
-      // console.log(response);
-      // console.log(response.data[0].activitys);
       setActivitys(response.data[0].activitys);
       setName(response.data[0].name);
     });
   }, []);
-
-  // console.log('context', 'period:', period, 'ac:', activitys);
 
   return (
     <ActivitysContexts.Provider
